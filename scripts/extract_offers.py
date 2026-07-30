@@ -13,6 +13,14 @@ FORBIDDEN_KEYS = {"activation_code", "enrollment_code", "addressee", "address", 
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 PROVIDERS = ("Experian IdentityWorks", "Experian", "Equifax", "TransUnion", "Kroll", "IDX", "AllClear", "Cyberscout")
 EXPOSURES = ((r"social security", "Social Security number"), (r"driver.?s license", "Driver's license number"), (r"financial account", "Financial account information"), (r"health information", "Health information"), (r"date of birth", "Date of birth"), (r"name", "Name"))
+NUMBER_WORDS = {
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+    "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+    "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+    "seventy": 70, "eighty": 80, "ninety": 90,
+}
 
 
 def clean(value: str) -> str:
@@ -35,7 +43,7 @@ def parse_date(value: str) -> str | None:
 
 
 def deadline_from(text: str) -> tuple[str | None, str | None]:
-    pattern = rf"(?:enrol(?:l(?:ment)?)?|register|sign\s*up)\b.{{0,100}}?(?:by|before|until)\s+(({MONTHS})\s+\d{{1,2}},?\s+\d{{4}}|\d{{1,2}}/\d{{1,2}}/\d{{4}})"
+    pattern = rf"(?:enrol(?:l|l?ment)?|register|sign\s*up)\b.{{0,100}}?(?:by|before|until)\s+(({MONTHS})\s+\d{{1,2}},?\s+\d{{4}}|\d{{1,2}}/\d{{1,2}}/\d{{4}})"
     matches = list(re.finditer(pattern, text, flags=re.I | re.S))
     parsed = []
     for match in matches:
@@ -45,6 +53,24 @@ def deadline_from(text: str) -> tuple[str | None, str | None]:
             parsed.append((iso, zone.group(1).upper() if zone else None))
     unique = {(item[0], item[1]) for item in parsed}
     return next(iter(unique)) if len(unique) == 1 else (None, None)
+
+
+def relative_deadline_from(text: str) -> int | None:
+    """Return an unambiguous enrolment window anchored to the recipient letter."""
+    action = r"(?:enrol(?:l|l?ment)?|register|registration|sign\s*up)"
+    number = r"(?P<number>\d{1,3}|(?:ninety|eighty|seventy|sixty|fifty|forty|thirty|twenty)(?:[-\s](?:one|two|three|four|five|six|seven|eight|nine))?|(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen))(?:\s*\(\s*(?P<parenthetical>\d{1,3})\s*\))?"
+    anchor = r"(?:from|of)\s+the\s+date\s+(?:of\s+)?(?:this|your)\s+letter"
+    pattern = rf"\b{action}\b.{{0,120}}?\bwithin\s+{number}\s+days?\s+{anchor}\b"
+    values = set()
+    for match in re.finditer(pattern, clean(text), flags=re.I):
+        raw = match.group("number").lower().replace("-", " ")
+        value = int(raw) if raw.isdigit() else sum(NUMBER_WORDS.get(piece, 0) for piece in raw.split())
+        parenthetical = match.group("parenthetical")
+        if parenthetical and int(parenthetical) != value:
+            return None
+        if value > 0:
+            values.add(value)
+    return next(iter(values)) if len(values) == 1 else None
 
 
 def deadline_status(deadline: str | None, built_at: str) -> str:
@@ -70,6 +96,15 @@ def provider_from(text: str) -> str | None:
 
 def extract(record: dict, text: str, built_at: str) -> dict:
     deadline, zone = deadline_from(text)
+    relative_days = relative_deadline_from(text)
+    if deadline and relative_days:
+        deadline, zone, relative_days = None, None, None
+    if deadline:
+        basis, status = "absolute", deadline_status(deadline, built_at)
+    elif relative_days:
+        basis, status = "letter_date_relative", "requires_letter_date"
+    else:
+        basis, status = "unknown", "unknown"
     provider = provider_from(text)
     duration = re.search(r"\(?([0-9]{1,2})\)?\s*(months?)\b", text, flags=re.I)
     months = None
@@ -87,7 +122,8 @@ def extract(record: dict, text: str, built_at: str) -> dict:
         "reported_date": record.get("reported_date"), "data_exposed": exposed, "remedy_type": remedy_type,
         "remedy_provider": provider, "remedy_duration_months": months, "remedy_duration_text": duration_text,
         "enrollment_deadline": deadline, "enrollment_deadline_timezone": zone,
-        "deadline_status": deadline_status(deadline, built_at), "source_report_url": record["report_url"],
+        "deadline_basis": basis, "deadline_days_from_letter": relative_days,
+        "deadline_status": status, "source_report_url": record.get("report_url") or record["source_report_url"],
         "source_notice_url": record["source_notice_url"], "source_notice_sha256": record["source_notice_sha256"],
         "source_accessed_at": record["source_accessed_at"],
     }

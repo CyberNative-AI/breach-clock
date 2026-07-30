@@ -68,6 +68,45 @@ class OfferExtractionTests(unittest.TestCase):
         self.assertEqual(row["deadline_status"], "open")
 
 
+    def test_relative_letter_date_deadline(self):
+        row = extract.extract(self.record(), "Register within 90 days from the date of this letter.", "2026-07-30T00:00:00Z")
+        self.assertIsNone(row["enrollment_deadline"])
+        self.assertEqual(row["deadline_basis"], "letter_date_relative")
+        self.assertEqual(row["deadline_days_from_letter"], 90)
+        self.assertEqual(row["deadline_status"], "requires_letter_date")
+
+    def test_spelled_relative_deadline_requires_matching_numeric_value(self):
+        self.assertEqual(extract.relative_deadline_from("Sign up within ninety (90) days of the date of your letter."), 90)
+        self.assertIsNone(extract.relative_deadline_from("Sign up within ninety (60) days of the date of your letter."))
+
+    def test_relative_deadline_rejects_wrong_actions_anchors_and_conflicts(self):
+        self.assertIsNone(extract.relative_deadline_from("Monitoring lasts 90 days from the date of this letter."))
+        self.assertIsNone(extract.relative_deadline_from("Enroll within 90 days from the breach date."))
+        self.assertIsNone(extract.relative_deadline_from("Register within 60 days from the date of this letter. Enroll within 90 days from the date of this letter."))
+
+    def test_absolute_and_relative_windows_are_conservatively_unresolved(self):
+        row = extract.extract(self.record(), "Enroll by October 30, 2026. Register within 90 days from the date of this letter.", "2026-07-30T00:00:00Z")
+        self.assertEqual(row["deadline_basis"], "unknown")
+        self.assertEqual(row["deadline_status"], "unknown")
+
+
+    def test_static_artifacts_keep_the_137_row_provenance_contract(self):
+        rows = json.loads((ROOT / "data" / "offers.json").read_text(encoding="utf-8"))
+        coverage = json.loads((ROOT / "data" / "coverage.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(rows), 137)
+        self.assertEqual(len({row["id"] for row in rows}), 137)
+        self.assertEqual(coverage["total_rows"], 137)
+        self.assertEqual(coverage["resolved_deadline_rule_count"], coverage["rows_with_absolute_deadlines"] + coverage["rows_with_relative_letter_date_deadlines"])
+        for row in rows:
+            self.assertIn(row["deadline_basis"], {"absolute", "letter_date_relative", "unknown"})
+            self.assertTrue(row["source_report_url"].startswith("https://oag.ca.gov/"))
+            self.assertTrue(row["source_notice_url"].startswith("https://oag.ca.gov/"))
+            if row["deadline_basis"] == "letter_date_relative":
+                self.assertIsNone(row["enrollment_deadline"])
+                self.assertGreater(row["deadline_days_from_letter"], 0)
+                self.assertEqual(row["deadline_status"], "requires_letter_date")
+
+
 class TransportTests(unittest.TestCase):
     def test_incomplete_read_retries_once_then_records_success(self):
         calls = []

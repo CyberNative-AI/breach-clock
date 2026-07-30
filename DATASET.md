@@ -8,13 +8,13 @@ Each build writes a local source manifest with source URL, access time, content 
 
 ## Fields
 
-Every row has: `id`, `organization`, `breach_dates`, `reported_date`, `data_exposed`, `remedy_type`, `remedy_provider`, `remedy_duration_months`, `remedy_duration_text`, `enrollment_deadline`, `enrollment_deadline_timezone`, `deadline_status`, `source_report_url`, `source_notice_url`, `source_notice_sha256`, `source_accessed_at`, and `extraction_confidence`.
+Every row has: `id`, `organization`, `breach_dates`, `reported_date`, `data_exposed`, `remedy_type`, `remedy_provider`, `remedy_duration_months`, `remedy_duration_text`, `enrollment_deadline`, `enrollment_deadline_timezone`, `deadline_basis`, `deadline_days_from_letter`, `deadline_status`, `source_report_url`, `source_notice_url`, `source_notice_sha256`, `source_accessed_at`, and `extraction_confidence`.
 
-`deadline_status` is `open`, `expired`, or `unknown`. It is calculated only from an explicit printed deadline and the recorded build timestamp. An ambiguous or absent deadline stays null and `unknown`; the builder does not infer a deadline from a letter date or the protection duration.
+`deadline_basis` is `absolute`, `letter_date_relative`, or `unknown`. `deadline_days_from_letter` is a positive integer only for an unambiguous enrollment instruction measured from the recipient letter date. A relative row has no static `enrollment_deadline` and its `deadline_status` is `requires_letter_date`; the visitor supplies their own letter date in the client to calculate it. The builder rejects conflicting windows, wrong anchors, and protection-duration language. Absolute rows retain `open` or `expired` status at the recorded build timestamp.
 
 ## Coverage and limitations
 
-This candidate is partial. See `data/coverage.json` for its source-record denominator, report pages attempted, notice PDFs fetched, and resolved-row numerator. It does not claim complete registry coverage. Deterministic text extraction can miss a scanned notice or an unfamiliar deadline format. The index does not determine enrolment eligibility and must not be used as a substitute for a recipient’s notice.
+The published baseline has exactly 137 unique rows. The 2026-07-30 receipt resolves 20 absolute deadlines and 0 relative letter-date deadlines: 20 of 137 (14.6%). It reports the build date, source access timestamp, and acquisition counts. The result is below the requested 60% threshold; no deadline is inferred from a protection duration, mailing date, or sample-letter date. Deterministic text extraction can miss a scanned notice or an unfamiliar deadline format. The index does not determine enrolment eligibility and must not be used as a substitute for a recipient’s notice.
 
 The included receipt was updated 2026-07-30. To report a correction, write to hello@cybernative.ai.
 

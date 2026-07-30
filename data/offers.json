@@ -9,6 +9,8 @@
       "2025-08-17"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -34,6 +36,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-09-30",
     "enrollment_deadline_timezone": "UTC",
@@ -59,6 +63,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -83,6 +89,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -107,6 +115,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -133,6 +143,8 @@
       "Driver's license number",
       "Date of birth"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-09-30",
     "enrollment_deadline_timezone": null,
@@ -161,6 +173,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -182,6 +196,8 @@
       "2026-03-21"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -203,6 +219,8 @@
       "2026-05-15"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -228,6 +246,8 @@
       "Driver's license number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -252,6 +272,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -275,6 +297,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -298,6 +322,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -319,6 +345,8 @@
       "2025-02-06"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -346,6 +374,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -367,6 +397,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-31",
     "enrollment_deadline_timezone": "UTC",
@@ -390,6 +422,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -414,6 +448,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -438,6 +474,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -459,6 +497,8 @@
       "2026-06-05"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -482,6 +522,8 @@
       "2025-08-08"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -505,6 +547,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -526,6 +570,8 @@
       "2026-04-10"
     ],
     "data_exposed": [],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-31",
     "enrollment_deadline_timezone": null,
@@ -549,6 +595,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -570,6 +618,8 @@
       "2026-05-01"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -592,6 +642,8 @@
       "2025-10-15"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -616,6 +668,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -637,6 +691,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -660,6 +716,8 @@
     "data_exposed": [
       "Health information"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -683,6 +741,8 @@
     "data_exposed": [
       "Health information"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -708,6 +768,8 @@
       "Health information",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -729,6 +791,8 @@
       "2026-04-06"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -753,6 +817,8 @@
       "Health information",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -777,6 +843,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-31",
     "enrollment_deadline_timezone": "UTC",
@@ -798,6 +866,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -819,6 +889,8 @@
       "2025-12-15"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -844,6 +916,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-31",
     "enrollment_deadline_timezone": "UTC",
@@ -866,6 +940,8 @@
       "2025-08-14"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -888,6 +964,8 @@
       "2026-04-23"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -911,6 +989,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -936,6 +1016,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -957,6 +1039,8 @@
       "2025-06-09"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -980,6 +1064,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1005,6 +1091,8 @@
       "Social Security number",
       "Date of birth"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1029,6 +1117,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-31",
     "enrollment_deadline_timezone": "UTC",
@@ -1052,6 +1142,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1073,6 +1165,8 @@
       "2025-08-26"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1094,6 +1188,8 @@
       "2026-04-03"
     ],
     "data_exposed": [],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-30",
     "enrollment_deadline_timezone": "UTC",
@@ -1115,6 +1211,8 @@
       "2025-12-06"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1137,6 +1235,8 @@
       "2025-12-26"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1156,6 +1256,8 @@
   {
     "breach_dates": [],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1180,6 +1282,8 @@
       "Social Security number",
       "Driver's license number"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1201,6 +1305,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1223,6 +1329,8 @@
       "2026-03-07"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1245,6 +1353,8 @@
       "2026-03-07"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1266,6 +1376,8 @@
       "2025-01-23"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1287,6 +1399,8 @@
       "2026-06-05"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1310,6 +1424,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-31",
     "enrollment_deadline_timezone": "UTC",
@@ -1334,6 +1450,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1355,6 +1473,8 @@
       "2025-02-22"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1379,6 +1499,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1402,6 +1524,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-07-31",
     "enrollment_deadline_timezone": "UTC",
@@ -1427,6 +1551,8 @@
       "Financial account information",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1450,6 +1576,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1477,6 +1605,8 @@
       "Financial account information",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1498,6 +1628,8 @@
       "2025-10-31"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1522,6 +1654,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1547,6 +1681,8 @@
       "Driver's license number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1568,6 +1704,8 @@
       "2026-04-25"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1592,6 +1730,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1616,6 +1756,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1641,6 +1783,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1663,6 +1807,8 @@
       "2026-04-09"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1684,6 +1830,8 @@
       "2026-01-31"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1706,6 +1854,8 @@
       "2025-05-29"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1732,6 +1882,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1754,6 +1906,8 @@
       "2025-09-26"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1775,6 +1929,8 @@
       "2026-06-05"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1800,6 +1956,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1821,6 +1979,8 @@
       "2025-06-03"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1843,6 +2003,8 @@
       "2026-03-30"
     ],
     "data_exposed": [],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-01",
     "enrollment_deadline_timezone": null,
@@ -1865,6 +2027,8 @@
       "2026-05-31"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1892,6 +2056,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1918,6 +2084,8 @@
       "Financial account information",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1940,6 +2108,8 @@
       "2025-04-06"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1966,6 +2136,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -1992,6 +2164,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2015,6 +2189,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2037,6 +2213,8 @@
       "2026-06-09"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2058,6 +2236,8 @@
       "2026-06-30"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2081,6 +2261,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2103,6 +2285,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2124,6 +2308,8 @@
       "2026-02-17"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2145,6 +2331,8 @@
       "2025-10-01"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2166,6 +2354,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-31",
     "enrollment_deadline_timezone": "UTC",
@@ -2190,6 +2380,8 @@
       "Driver's license number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2217,6 +2409,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2241,6 +2435,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-08-31",
     "enrollment_deadline_timezone": "UTC",
@@ -2266,6 +2462,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2291,6 +2489,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2315,6 +2515,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2336,6 +2538,8 @@
       "2026-04-07"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2361,6 +2565,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-09-30",
     "enrollment_deadline_timezone": "UTC",
@@ -2382,6 +2588,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2407,6 +2615,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2431,6 +2641,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2452,6 +2664,8 @@
       "2026-05-08"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2478,6 +2692,8 @@
       "Driver's license number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2501,6 +2717,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-31",
     "enrollment_deadline_timezone": "UTC",
@@ -2525,6 +2743,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2547,6 +2767,8 @@
       "2026-04-27"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2574,6 +2796,8 @@
       "Financial account information",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2596,6 +2820,8 @@
       "2026-01-14"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2618,6 +2844,8 @@
       "2025-08-12"
     ],
     "data_exposed": [],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-31",
     "enrollment_deadline_timezone": null,
@@ -2639,6 +2867,8 @@
       "2026-04-23"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2662,6 +2892,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2685,6 +2917,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-26",
     "enrollment_deadline_timezone": null,
@@ -2708,6 +2942,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2731,6 +2967,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2755,6 +2993,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2778,6 +3018,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2802,6 +3044,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2828,6 +3072,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2854,6 +3100,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2875,6 +3123,8 @@
       "2026-04-17"
     ],
     "data_exposed": [],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-31",
     "enrollment_deadline_timezone": "UTC",
@@ -2899,6 +3149,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2920,6 +3172,8 @@
       "2026-03-27"
     ],
     "data_exposed": [],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2946,6 +3200,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2970,6 +3226,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -2994,6 +3252,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -3019,6 +3279,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -3043,6 +3305,8 @@
       "Social Security number",
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-30",
     "enrollment_deadline_timezone": "UTC",
@@ -3066,6 +3330,8 @@
     "data_exposed": [
       "Health information"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -3089,6 +3355,8 @@
     "data_exposed": [
       "Health information"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -3116,6 +3384,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -3142,6 +3412,8 @@
       "Date of birth",
       "Name"
     ],
+    "deadline_basis": "unknown",
+    "deadline_days_from_letter": null,
     "deadline_status": "unknown",
     "enrollment_deadline": null,
     "enrollment_deadline_timezone": null,
@@ -3166,6 +3438,8 @@
     "data_exposed": [
       "Name"
     ],
+    "deadline_basis": "absolute",
+    "deadline_days_from_letter": null,
     "deadline_status": "open",
     "enrollment_deadline": "2026-10-31",
     "enrollment_deadline_timezone": "UTC",

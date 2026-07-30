@@ -1,14 +1,17 @@
 {
+  "absolute_rows_expired": 0,
+  "absolute_rows_open": 20,
+  "acquisition_failures": 0,
   "built_at": "2026-07-30T00:00:00Z",
-  "coverage_complete": false,
-  "extraction_failures": 0,
-  "pdfs_fetched": 138,
-  "report_pages_attempted": 138,
-  "resolved_record_count": 137,
-  "rows_expired": 0,
-  "rows_open": 20,
+  "coverage_complete": true,
+  "pdfs_fetched": 0,
+  "report_pages_attempted": 0,
+  "resolved_deadline_rule_count": 20,
+  "resolved_deadline_rule_percentage": 14.6,
   "rows_unknown": 117,
-  "rows_with_any_remedy": 128,
-  "rows_with_explicit_deadline": 20,
-  "source_record_count": 5232
+  "rows_with_absolute_deadlines": 20,
+  "rows_with_relative_letter_date_deadlines": 0,
+  "source_accessed_at": "2026-07-30T10:53:33Z",
+  "source_record_count": 137,
+  "total_rows": 137
 }
