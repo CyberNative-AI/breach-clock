@@ -14,7 +14,7 @@ Every row has: `id`, `organization`, `breach_dates`, `reported_date`, `data_expo
 
 ## Coverage and limitations
 
-The published baseline has exactly 137 unique rows. The 2026-07-30 receipt resolves 20 absolute deadlines and 36 relative letter-date deadlines: 56 of 137 (40.9%). It records 137 report-page attempts, 136 acquired PDFs, one acquisition failure, the build timestamp, and source access time. The result is below the requested 60% threshold; no deadline is inferred from a protection duration, mailing date, or sample-letter date. Deterministic text extraction can miss a scanned notice or an unfamiliar deadline format. The index does not determine enrolment eligibility and must not be used as a substitute for a recipient’s notice.
+The published baseline has exactly 137 unique rows. The 2026-07-30 receipt resolves 20 absolute deadlines and 36 relative letter-date deadlines: 56 of 137 (40.9%). It records 137 report-page attempts, 135 acquired PDFs, two acquisition failures, the build timestamp, and source access time. The result is below the requested 60% threshold; no deadline is inferred from a protection duration, mailing date, or sample-letter date. Deterministic text extraction can miss a scanned notice or an unfamiliar deadline format. The index does not determine enrolment eligibility and must not be used as a substitute for a recipient’s notice.
 
 The included receipt was updated 2026-07-30. To report a correction, write to hello@cybernative.ai.
 
