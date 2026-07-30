@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Breach Clock offer row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "organization", "breach_dates", "reported_date", "data_exposed", "remedy_type", "remedy_provider", "remedy_duration_months", "remedy_duration_text", "enrollment_deadline", "enrollment_deadline_timezone", "deadline_status", "source_report_url", "source_notice_url", "source_notice_sha256", "source_accessed_at", "extraction_confidence"],
+  "properties": {
+    "id": {"type": "string"},
+    "organization": {"type": ["string", "null"]},
+    "breach_dates": {"type": "array", "items": {"type": "string", "format": "date"}},
+    "reported_date": {"type": ["string", "null"], "format": "date"},
+    "data_exposed": {"type": "array", "items": {"type": "string"}},
+    "remedy_type": {"type": ["string", "null"]},
+    "remedy_provider": {"type": ["string", "null"]},
+    "remedy_duration_months": {"type": ["integer", "null"], "minimum": 0},
+    "remedy_duration_text": {"type": ["string", "null"]},
+    "enrollment_deadline": {"type": ["string", "null"], "format": "date"},
+    "enrollment_deadline_timezone": {"type": ["string", "null"]},
+    "deadline_status": {"enum": ["open", "expired", "unknown"]},
+    "source_report_url": {"type": "string", "format": "uri"},
+    "source_notice_url": {"type": "string", "format": "uri"},
+    "source_notice_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "source_accessed_at": {"type": "string", "format": "date-time"},
+    "extraction_confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  }
+}

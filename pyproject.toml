@@ -1,0 +1,8 @@
+[project]
+name = "breach-clock"
+version = "0.1.0"
+description = "Static index builder for California breach-notice protection offers."
+requires-python = ">=3.11"
+
+[tool.unittest]
+start-directory = "tests"
