@@ -80,6 +80,14 @@ def main() -> None:
     absolute = sum(row["deadline_basis"] == "absolute" for row in rows)
     relative = sum(row["deadline_basis"] == "letter_date_relative" for row in rows)
     unknown = sum(row["deadline_basis"] == "unknown" for row in rows)
+    extracted_relative = sum(
+        row.get("deadline_basis") == "letter_date_relative"
+        and isinstance(row.get("deadline_days_from_letter"), int)
+        and row["deadline_days_from_letter"] > 0
+        for row in extracted.values()
+    )
+    if extracted_relative and not relative:
+        raise ValueError("extracted relative deadline rules are missing from the published output")
     resolved = absolute + relative
     coverage = {
         "built_at": args.built_at,
