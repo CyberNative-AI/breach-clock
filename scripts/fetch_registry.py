@@ -8,8 +8,11 @@ import hashlib
 import json
 import re
 from datetime import datetime, timezone
+from http.client import IncompleteRead
 from html import unescape
+from time import sleep
 from pathlib import Path
+from urllib.error import ContentTooShortError
 from urllib.request import Request, urlopen
 
 REGISTRY_URL = "https://oag.ca.gov/privacy/databreach/list"
@@ -20,14 +23,22 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def fetch(url: str) -> tuple[bytes, str]:
+def fetch(url: str, *, opener=urlopen, pause=sleep) -> tuple[bytes, str, int]:
+    """Read a source completely, retrying only incomplete/truncated acquisition."""
     request = Request(url, headers={"User-Agent": "BreachClock/0.1 (+https://cybernative.ai)"})
-    with urlopen(request, timeout=60) as response:
-        return response.read(), response.headers.get_content_type()
+    for attempt in range(1, 4):
+        try:
+            with opener(request, timeout=60) as response:
+                return response.read(), response.headers.get_content_type(), attempt
+        except (IncompleteRead, ContentTooShortError):
+            if attempt == 3:
+                raise
+            pause(0.2 * attempt)
+    raise AssertionError("unreachable")
 
 
-def receipt(url: str, payload: bytes, content_type: str, accessed_at: str) -> dict:
-    return {"url": url, "accessed_at": accessed_at, "size": len(payload), "content_type": content_type, "sha256": hashlib.sha256(payload).hexdigest()}
+def receipt(url: str, payload: bytes, content_type: str, accessed_at: str, attempts: int) -> dict:
+    return {"url": url, "accessed_at": accessed_at, "size": len(payload), "content_type": content_type, "sha256": hashlib.sha256(payload).hexdigest(), "acquisition_attempts": attempts}
 
 
 def plain(value: str) -> str:
@@ -64,8 +75,8 @@ def main() -> None:
     build = Path(args.build_dir)
     build.mkdir(parents=True, exist_ok=True)
     accessed_at = utc_now()
-    csv_bytes, csv_type = fetch(CSV_URL)
-    html_bytes, html_type = fetch(REGISTRY_URL)
+    csv_bytes, csv_type, csv_attempts = fetch(CSV_URL)
+    html_bytes, html_type, html_attempts = fetch(REGISTRY_URL)
     (build / "registry.csv").write_bytes(csv_bytes)
     (build / "registry.html").write_bytes(html_bytes)
     reports = parse_reports(html_bytes.decode("utf-8", errors="replace"))
@@ -73,7 +84,7 @@ def main() -> None:
         for report in reports:
             handle.write(json.dumps(report, sort_keys=True) + "\n")
     csv_rows = list(csv.DictReader(csv_bytes.decode("utf-8-sig").splitlines()))
-    manifest = [receipt(CSV_URL, csv_bytes, csv_type, accessed_at), receipt(REGISTRY_URL, html_bytes, html_type, accessed_at)]
+    manifest = [receipt(CSV_URL, csv_bytes, csv_type, accessed_at, csv_attempts), receipt(REGISTRY_URL, html_bytes, html_type, accessed_at, html_attempts)]
     (build / "source-manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({"csv_records": len(csv_rows), "report_links": len(reports), "manifest": str(build / "source-manifest.json")}, sort_keys=True))
 

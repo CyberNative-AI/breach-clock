@@ -52,17 +52,26 @@ def deadline_status(deadline: str | None, built_at: str) -> str:
         return "unknown"
     today = datetime.fromisoformat(built_at.replace("Z", "+00:00")).date()
     printed = date.fromisoformat(deadline)
-    if printed > today:
+    if printed >= today:
         return "open"
     if printed < today:
         return "expired"
     return "unknown"
 
 
+def provider_from(text: str) -> str | None:
+    if re.search(r"enroll\.krollmonitoring\.com", text, flags=re.I):
+        return "Kroll"
+    enrollment_provider = re.search(r"Visit\s+(?:the\s+)?(Experian IdentityWorks|Experian|Equifax|TransUnion|Kroll|IDX|AllClear|Cyberscout)(?:\s+website)?\s+(?:to\s+)?enroll", text, flags=re.I)
+    if enrollment_provider:
+        return enrollment_provider.group(1)
+    return next((name for name in PROVIDERS if re.search(re.escape(name), text, flags=re.I)), None)
+
+
 def extract(record: dict, text: str, built_at: str) -> dict:
     deadline, zone = deadline_from(text)
-    provider = next((name for name in PROVIDERS if re.search(re.escape(name), text, flags=re.I)), None)
-    duration = re.search(r"\b(\d{1,2})\s*(months?|years?)\b", text, flags=re.I)
+    provider = provider_from(text)
+    duration = re.search(r"\(?([0-9]{1,2})\)?\s*(months?)\b", text, flags=re.I)
     months = None
     duration_text = None
     if duration:

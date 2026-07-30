@@ -1,4 +1,5 @@
 import importlib.util
+from http.client import IncompleteRead
 import json
 import unittest
 from pathlib import Path
@@ -14,6 +15,7 @@ def load(name):
 
 
 extract = load("extract_offers")
+transport = load("fetch_registry")
 
 
 class OfferExtractionTests(unittest.TestCase):
@@ -59,6 +61,45 @@ class OfferExtractionTests(unittest.TestCase):
         self.assertFalse({"activation_code", "enrollment_code", "addressee", "address", "phone", "email", "mailing_address"} & set(row))
         self.assertNotIn("Morgan Example", json.dumps(row))
         self.assertNotIn("10 Example Street", json.dumps(row))
+
+
+    def test_same_day_explicit_deadline_is_open(self):
+        row = extract.extract(self.record(), "Enroll by July 30, 2026 UTC.", "2026-07-30T18:00:00Z")
+        self.assertEqual(row["deadline_status"], "open")
+
+
+class TransportTests(unittest.TestCase):
+    def test_incomplete_read_retries_once_then_records_success(self):
+        calls = []
+
+        class Response:
+            headers = type("Headers", (), {"get_content_type": lambda self: "application/pdf"})()
+
+            def __init__(self, payload):
+                self.payload = payload
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_):
+                return False
+
+            def read(self):
+                if isinstance(self.payload, Exception):
+                    raise self.payload
+                return self.payload
+
+        payloads = [IncompleteRead(b"partial", 12), b"complete notice"]
+
+        def opener(_request, timeout):
+            calls.append(timeout)
+            return Response(payloads.pop(0))
+
+        body, content_type, attempts = transport.fetch("https://example.test/notice.pdf", opener=opener, pause=lambda _: None)
+        self.assertEqual(body, b"complete notice")
+        self.assertEqual(content_type, "application/pdf")
+        self.assertEqual(attempts, 2)
+        self.assertEqual(calls, [60, 60])
 
 
 if __name__ == "__main__":
