@@ -20,4 +20,4 @@ The downloaded source inputs and `build/source-manifest.json` are local build in
 
 `data/offers.jsonl` is the line-oriented index. `data/offers.json` is the browser-ready equivalent. `data/coverage.json` describes the exact build scope and counts. Each row links to the original report and notice, and records the notice hash and access time.
 
-The code in this repository is MIT-licensed. The proposed dataset license is described separately in [DATASET.md](DATASET.md) and remains subject to independent security review before any upload.
+The software is MIT-licensed. CyberNative AI LLC dedicates only its rights, if any, in the selection and arrangement of `data/` under CC0 1.0 Universal; linked or underlying notices, notice prose, third-party trademarks, and other third-party material are excluded. [DATASET.md](DATASET.md) governs the exact scope.
