@@ -77,6 +77,7 @@ def main() -> None:
                     path = out_dir / f"{record['id']}.pdf"
                     path.write_bytes(pdf)
                     item["pdf_path"] = str(path)
+                    item["source_accessed_at"] = accessed_at
                     fetched += 1
         except Exception as exc:
             item["error"] = type(exc).__name__

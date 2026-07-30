@@ -1,6 +1,9 @@
 import importlib.util
 from http.client import IncompleteRead
 import json
+import subprocess
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -97,6 +100,10 @@ class OfferExtractionTests(unittest.TestCase):
         self.assertEqual(len({row["id"] for row in rows}), 137)
         self.assertEqual(coverage["total_rows"], 137)
         self.assertEqual(coverage["resolved_deadline_rule_count"], coverage["rows_with_absolute_deadlines"] + coverage["rows_with_relative_letter_date_deadlines"])
+        retained = next(row for row in rows if row["id"] == "sb24-624003")
+        self.assertEqual(retained["enrollment_deadline"], "2026-08-31")
+        self.assertEqual(retained["deadline_basis"], "absolute")
+        self.assertEqual(retained["deadline_status"], "open")
         for row in rows:
             self.assertIn(row["deadline_basis"], {"absolute", "letter_date_relative", "unknown"})
             self.assertTrue(row["source_report_url"].startswith("https://oag.ca.gov/"))
@@ -105,6 +112,48 @@ class OfferExtractionTests(unittest.TestCase):
                 self.assertIsNone(row["enrollment_deadline"])
                 self.assertGreater(row["deadline_days_from_letter"], 0)
                 self.assertEqual(row["deadline_status"], "requires_letter_date")
+
+
+    def test_documented_default_build_uses_extracted_rows_and_manifest_counts(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "data").mkdir()
+            (root / "build" / "notices").mkdir(parents=True)
+            baseline, extracted_rows, notices = [], [], []
+            for index in range(137):
+                identifier = f"sb24-{index:06d}"
+                row = {
+                    "id": identifier, "organization": f"Organization {index}",
+                    "enrollment_deadline": None, "enrollment_deadline_timezone": None,
+                    "deadline_basis": "unknown", "deadline_days_from_letter": None,
+                    "deadline_status": "unknown", "source_report_url": "https://oag.ca.gov/report",
+                    "source_notice_url": "https://oag.ca.gov/notice.pdf",
+                    "source_notice_sha256": "a" * 64, "source_accessed_at": "2026-07-30T00:00:00Z",
+                }
+                if index == 0:
+                    row.update({"id": "sb24-624003", "enrollment_deadline": "2026-08-31", "deadline_basis": "absolute", "deadline_status": "open"})
+                baseline.append(row)
+                extracted = dict(row)
+                extracted.update({"enrollment_deadline": None, "enrollment_deadline_timezone": None, "deadline_basis": "unknown", "deadline_status": "unknown", "source_accessed_at": "2026-07-31T00:00:00Z"})
+                if index == 1:
+                    extracted.update({"deadline_basis": "letter_date_relative", "deadline_days_from_letter": 90, "deadline_status": "requires_letter_date"})
+                extracted_rows.append(extracted)
+                notice = dict(row)
+                if index < 136:
+                    notice["pdf_path"] = f"build/notices/{identifier}.pdf"
+                else:
+                    notice["error"] = "HTTPError"
+                notices.append(notice)
+            for path, rows_to_write in ((root / "data" / "offers.jsonl", baseline), (root / "build" / "extracted.jsonl", extracted_rows), (root / "build" / "notices" / "manifest.jsonl", notices)):
+                path.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows_to_write), encoding="utf-8")
+            subprocess.run([sys.executable, str(ROOT / "scripts" / "build_index.py"), "--built-at", "2026-07-30T00:00:00Z"], cwd=root, check=True, capture_output=True, text=True)
+            coverage = json.loads((root / "data" / "coverage.json").read_text(encoding="utf-8"))
+            rebuilt = json.loads((root / "data" / "offers.json").read_text(encoding="utf-8"))
+            retained = next(row for row in rebuilt if row["id"] == "sb24-624003")
+            self.assertEqual((coverage["pdfs_fetched"], coverage["acquisition_failures"]), (136, 1))
+            self.assertEqual((coverage["rows_with_absolute_deadlines"], coverage["rows_with_relative_letter_date_deadlines"]), (1, 1))
+            self.assertEqual(retained["enrollment_deadline"], "2026-08-31")
+            self.assertEqual(retained["source_accessed_at"], "2026-07-31T00:00:00Z")
 
 
 class TransportTests(unittest.TestCase):

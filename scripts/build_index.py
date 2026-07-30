@@ -37,7 +37,7 @@ def normalize_deadline(row: dict, built_at: str) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--rows", default="data/offers.jsonl")
+    parser.add_argument("--rows", default="build/extracted.jsonl")
     parser.add_argument("--baseline", default="data/offers.jsonl")
     parser.add_argument("--notices", default="build/notices/manifest.jsonl")
     parser.add_argument("--out-dir", default="data")
@@ -54,7 +54,24 @@ def main() -> None:
     unexpected = set(extracted) - set(baseline_ids)
     if unexpected:
         raise ValueError("extraction includes IDs outside the published baseline")
-    rows = [normalize_deadline(extracted.get(row["id"], row), args.built_at) for row in baseline]
+    rows = []
+    for baseline_row in baseline:
+        extracted_row = extracted.get(baseline_row["id"])
+        # Preserve a previously verified printed deadline when extraction
+        # cannot reproduce that single source field. This never derives a
+        # relative deadline or converts protection duration into one.
+        if (
+            extracted_row
+            and not extracted_row.get("enrollment_deadline")
+            and baseline_row.get("deadline_basis") == "absolute"
+            and baseline_row.get("enrollment_deadline")
+        ):
+            extracted_row = {
+                **extracted_row,
+                "enrollment_deadline": baseline_row["enrollment_deadline"],
+                "enrollment_deadline_timezone": baseline_row.get("enrollment_deadline_timezone"),
+            }
+        rows.append(normalize_deadline(extracted_row or baseline_row, args.built_at))
     rows.sort(key=lambda row: (row["organization"] or "").casefold())
     notices = read_jsonl(args.notices) if Path(args.notices).exists() else []
     report_pages = args.report_pages_attempted if args.report_pages_attempted is not None else len(notices)

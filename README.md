@@ -14,7 +14,7 @@ python scripts/build_index.py
 python -m unittest discover -s tests -v
 ```
 
-The downloaded source inputs and `build/source-manifest.json` are local build inputs; they are intentionally not committed. Notice PDFs and notice prose are never published by this repository.
+`build_index.py` consumes `build/extracted.jsonl` by default, produced by the immediately preceding extraction command. The downloaded source inputs and `build/source-manifest.json` are local build inputs; they are intentionally not committed. Notice PDFs and notice prose are never published by this repository.
 
 ## Output
 
