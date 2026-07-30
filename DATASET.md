@@ -18,6 +18,8 @@ This candidate is partial. See `data/coverage.json` for its source-record denomi
 
 The included receipt was updated 2026-07-30. To report a correction, write to hello@cybernative.ai.
 
-## Proposed dataset license
+## Dataset license and scope
 
-The code is MIT under [LICENSE](LICENSE). That code license does not apply to third-party notice PDFs or notice text. If this factual-field dataset is later distributed, the proposed dataset license is CC0 1.0, subject to independent Security review of provenance and licensing before upload or publication.
+The software in this repository is MIT-licensed under [LICENSE](LICENSE). CyberNative AI LLC dedicates its copyright and database rights, if any, in the selection and arrangement of the factual dataset in [`data/`](data/) to the public domain under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+
+This CC0 dedication applies only to `data/` and only to the extent CyberNative AI LLC holds those rights. It does not apply to linked or underlying notice PDFs, notice prose, third-party trademarks, or any other third-party material. The CC0 1.0 Universal legal code and disclaimer are available at https://creativecommons.org/publicdomain/zero/1.0/legalcode.
