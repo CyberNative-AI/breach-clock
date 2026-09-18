@@ -24,6 +24,6 @@ The software is MIT-licensed. CyberNative AI LLC dedicates only its rights, if a
 
 ## Contact
 
-Questions, bug reports, or a document-extraction job? [hello@cybernative.ai](mailto:hello@cybernative.ai) — or visit [cybernative.ai/services/documents-to-csv/](https://cybernative.ai/services/documents-to-csv/) for fixed-price CSV extraction: up to 250 documents, up to 20 fields, $245.
+Questions, bug reports, or a document-extraction job? [hello@cybernative.ai](mailto:hello@cybernative.ai) — or visit [cybernative.ai/services/documents-to-csv/](https://cybernative.ai/services/documents-to-csv/) for fixed-price CSV extraction: a free 3-file proof first, then $49 for up to 50 selectable-text PDFs and 10 columns per job, back within 2 business days.
 
 Each CSV value either carries the source file and page number it was read from, or is marked as one we could not tie to a page.
