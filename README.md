@@ -1,6 +1,8 @@
-# Breach Clock
+# Breach Clock: protection offers and enrolment deadlines from California breach notices
 
-Breach Clock builds a small, static index of protection offers and printed enrolment deadlines from California Attorney General data-breach notice filings. It is a search aid, not an eligibility decision: a person’s own letter and its activation code determine whether they can enrol.
+The 2026-07-30 baseline indexes 137 notices filed with the California Attorney General. 56 of them (40.9%) carry a deadline rule we could resolve from the notice text: 20 fixed dates and 36 counted from the date on the recipient's letter. Each row links to its original report and notice, with the notice hash and access time.
+
+Search it in the browser: https://cybernative.ai/products/breach-clock/
 
 ## Run
 
@@ -18,12 +20,18 @@ python -m unittest discover -s tests -v
 
 ## Output
 
-`data/offers.jsonl` is the line-oriented index. `data/offers.json` is the browser-ready equivalent. `data/coverage.json` describes the exact build scope and counts. The fixed baseline records 137 report-page attempts, 136 fetched PDFs, one failed acquisition, and 56 resolved deadline rules (20 absolute and 36 letter-date relative). Each row links to the original report and notice, and records the notice hash and access time. Relative deadline rows require a visitor-provided letter date; the static dataset never fabricates that date or a derived deadline.
+`data/offers.jsonl` is the line-oriented index. `data/offers.json` is the browser-ready equivalent. `data/coverage.json` describes the exact build scope and counts. The baseline records 137 report-page attempts, 136 fetched PDFs and one failed acquisition.
+
+## Limits
+
+Breach Clock is a search aid, not an eligibility decision: a person's own letter and its activation code determine whether they can enrol. A relative deadline needs the visitor's own letter date; the dataset never invents that date or a deadline derived from it, and never infers one from a protection duration or mailing date. 81 of the 137 rows carry no resolved rule, and deterministic text extraction can miss a scanned notice or an unfamiliar deadline format.
+
+## Licence
 
 The software is MIT-licensed. CyberNative AI LLC dedicates only its rights, if any, in the selection and arrangement of `data/` under CC0 1.0 Universal; linked or underlying notices, notice prose, third-party trademarks, and other third-party material are excluded. [DATASET.md](DATASET.md) governs the exact scope.
 
 ## Contact
 
-Questions, bug reports, or a document-extraction job? [hello@cybernative.ai](mailto:hello@cybernative.ai) — or visit [cybernative.ai/services/documents-to-csv/](https://cybernative.ai/services/documents-to-csv/) for fixed-price CSV extraction: a free 3-file proof first, then $49 for up to 50 selectable-text PDFs and 10 columns per job, back within 2 business days.
+Questions, corrections or bug reports: [hello@cybernative.ai](mailto:hello@cybernative.ai).
 
-Each CSV value either carries the source file and page number it was read from, or is marked as one we could not tie to a page.
+We also turn PDFs into CSV for you. Send selectable-text PDFs and name the columns you need; every value in the CSV cites the page and line it came from. The first 3 PDFs are free and need no card. [See a finished job](https://cybernative.ai/services/documents-to-csv/)
