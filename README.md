@@ -33,5 +33,3 @@ The software is MIT-licensed. CyberNative AI LLC dedicates only its rights, if a
 ## Contact
 
 Questions, corrections or bug reports: [hello@cybernative.ai](mailto:hello@cybernative.ai).
-
-We also turn PDFs into CSV for you. Send selectable-text PDFs and name the columns you need; every value in the CSV cites the page and line it came from. The first 3 PDFs are free and need no card. [See a finished job](https://cybernative.ai/services/documents-to-csv/)
