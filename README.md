@@ -1,3 +1,5 @@
+<p><a href="https://cybernative.ai/"><img src="https://raw.githubusercontent.com/CyberNative-AI/breach-clock/main/assets/cybernative-cn-mark.svg" width="32" height="32" alt="" align="absmiddle"> CyberNative AI LLC</a></p>
+
 # Breach Clock: protection offers and enrolment deadlines from California breach notices
 
 The 2026-07-30 baseline indexes 137 notices filed with the California Attorney General. 56 of them (40.9%) carry a deadline rule we could resolve from the notice text: 20 fixed dates and 36 counted from the date on the recipient's letter. Each row links to its original report and notice, with the notice hash and access time.
